@@ -19,4 +19,7 @@ Network
 - Public Assigng ( Instância estará exposta a internet com IP Público)
 - New instance with VPN Security for secure connnectios with other machines (instances) 
    - If the instancie isn't be expost to aws server we need to create a VPN Security Instance for security
- - 
+ 
+  * Permission Management - AWS AIM
+  * Data Encryption - AWS KMS
+  * Network Security Control - Amazon VPC
