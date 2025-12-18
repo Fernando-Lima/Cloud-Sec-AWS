@@ -21,5 +21,6 @@ Network
    - If the instancie isn't be expost to aws server we need to create a VPN Security Instance for security
  
   * Permission Management - AWS AIM
+    - User permission, group, roles 
   * Data Encryption - AWS KMS
   * Network Security Control - Amazon VPC
