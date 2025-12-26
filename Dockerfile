@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/*.jar app.jar
 
 # Expõe a porta interna
-EXPOSE 8080
+EXPOSE 8081
 
 # Comando de inicialização
 ENTRYPOINT ["java", "-jar", "app.jar"]
