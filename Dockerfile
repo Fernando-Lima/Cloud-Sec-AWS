@@ -1,15 +1,24 @@
-# Imagem base com Java 21
-FROM eclipse-temurin:21-jre
+FROM maven:3.9-eclipse-temurin-21 AS build
 
-# Diretório de trabalho
+WORKDIR /build
+
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+Copy src ./src
+
+RUN mvn clean package -DskipTests
+
+#Stage 2: Runtime
+
+FROM eclipse-temurin:21-jre-alpine
+
 WORKDIR /app
 
-# Copia o JAR
-COPY target/*.jar app.jar
+COPY --from=build /build/target/*.jar app.jar
 
-# Expõe a porta interna
 EXPOSE 8081
 
-# Comando de inicialização
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
